@@ -1,0 +1,5 @@
+.idea/
+target/
+uploads/
+*.iml
+.DS_Store

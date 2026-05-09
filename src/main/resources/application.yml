@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: teamwiki-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/teamwiki?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 3000
+
+jwt:
+  secret: TeamWikiSecretKeyForJwtTokenGeneration2024VeryLongSecretKey
+  expiration: 86400000
+
+app:
+  cors:
+    allowed-origins: http://localhost:5173,http://localhost:3000
+  recycle-bin:
+    retention-days: 30
+  upload:
+    avatar-dir: uploads/avatars
